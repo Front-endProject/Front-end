@@ -1,0 +1,85 @@
+
+html,body {
+    height:100%;
+}
+.navbar {
+    margin-bottom: 0px;
+}
+.jumbotron { 
+    
+    height: 100%;
+    margin-bottom: 0px;
+    background-attachment: fixed;
+   
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,7db9e8+100&1+0,0+100 */
+    background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(125,185,232,0) 100%) , url("../city.jpg"); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(125,185,232,0) 100%), url("../city.jpg"); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(125,185,232,0) 100%), url("../city.jpg"); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#007db9e8',GradientType=0 ); /* IE6-9 */
+    background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    color: white;
+}
+
+.axle{
+    color: #4CAF50;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 35px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 20px;
+   
+}
+.interns{
+font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 20px;
+    color: #F39C12;
+    
+}
+
+
+#form{
+    margin-top: 12%;
+
+}
+#text{
+    margin-top: 11%;
+    
+}
+.navbar {
+   background:rgba(0,0,0,0.5);   /* for latest browsers */
+   background: #000;  /* fallback for older browsers */
+}
+
+.navlinks{
+    margin: 14px;
+} 
+.mynavbtn{
+    margin-left: 7px;
+    margin-right: 7px;
+}
+a{
+    color: #D0D3D4;
+}
+#logo{
+    margin: 14px;
+}
+.jumbotron .h1, .jumbotron h1{
+    color: #D0D3D4;
+}
+.modal{
+    color: black;
+}
+.glyphicon{
+    color: #F39C12;
+}
+a:focus, a:hover{
+    color: #4CAF50;
+}
