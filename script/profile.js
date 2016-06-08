@@ -1,7 +1,7 @@
 (function() { //create closure to avoid polluting the global namespace
 
     //these will change according to each program
-    var profileTitle = "#profile-title",
+    var profileTitle = "#profile-pic",
         bgWrap = ".bgWrap",
         navbarFixed = ".navbar-fixed",
         bgImgImg = ".background-img img",
@@ -42,13 +42,13 @@
 
         var bgPercentage = calculateY({
             x: initialDiff,
-            y: 0.15
+            y: 0
         }, {
             x: 0,
             y: 1
         }, d);
 
-        $(profileTitle).css('transform', 'scale(' + imgPercentage + ')');
+        //$(profileTitle).css('transform', 'scale(' + imgPercentage + ')');
 
         var bgRGB = calculateY({
             x: initialDiff,
@@ -59,9 +59,9 @@
         }, d);
         bgRGB = parseInt(bgRGB, 10);
         var str = "rgba(" + bgRGB + "," + bgRGB + "," + bgRGB + "," + bgPercentage + ")";
-        $(bgLayer).css('background', str);
+        //$(bgLayer).css('background', str);
 
-        if(!bgHeight) return;
+        //if(!bgHeight) return;
         var imgPosY = calculateY({
             x: initialDiff,
             y: 0
@@ -78,7 +78,9 @@
 
         var str2 = 'translate(0,' + imgPosY + 'px)';
 
-        $(bgImg).css('transform', str2);
+        //console.log(str2);
+
+        //$(bgImg).css('transform', str2);
 
 
 
