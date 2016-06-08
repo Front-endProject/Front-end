@@ -1,16 +1,17 @@
 (function() { //create closure to avoid polluting the global namespace
 
+    //these will change according to each program
     var profileTitle = "#profile-title",
         bgWrap = ".bgWrap",
         navbarFixed = ".navbar-fixed",
         bgImgImg = ".background-img img",
         bgImg = ".background-img",
-        bgLayer = ".background-layer"; //these will change with each developers program
+        bgLayer = ".background-layer"; 
 
 
-    var initialOffset = $(profileTitle).offset().top;
-    var bgHeight;
-    var bgWrapHeight = $().height();
+    var initialOffset = $(profileTitle).offset().top; //used as a first value to create the function
+    var bgHeight; //will be set when the image loads
+    var bgWrapHeight = $(bgWrap).height(); //
 
     var scrollTop = $(window).scrollTop();
     var navbarHeight = $(navbarFixed).height();
@@ -28,8 +29,8 @@
     var navbarHeight = $(navbarFixed).height();
 
     function updateScroll() {
-        var scrollTop= $(window).scrollTop();
-        var d = (initialOffset - scrollTop- navbarHeight);
+        var scrollTop = $(window).scrollTop();
+        var d = initialOffset - scrollTop - navbarHeight;
 
         var imgPercentage = calculateY({
             x: initialDiff,
@@ -87,6 +88,7 @@
     updateScroll();
 
 
+    /* Calculates y of a point when given two other points of a linear function */
     function calculateY(p1, p2, x) {
         var a = (p1.y - p2.y) / (p1.x - p2.x),
             b = p1.y - a * p1.x,
