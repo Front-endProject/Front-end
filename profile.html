@@ -2,28 +2,49 @@
 <html ng-app="profile">
   <head>
     <meta charset="UTF-8">
-    <title>User Page</title>
       
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
 
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+    <title>A Pen by  Rafael</title>
+    <!-- Compiled and minified CSS -->
 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.css" rel="stylesheet">
+
+<!--<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.css" rel="stylesheet">-->
+
       
   <!--angular CDN -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 
   <link rel="stylesheet" href="css/profile.css">
+      
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
     
+  <!--my personal css -->  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/profile.css">
     
     
   </head>
 
-  <body ng-controller="MainController">
-
+  <body>
+          <div id="topnav" class="row col-xs-12 fixit">
+            <div id="nav-mod">
+               <div class="container pnav">
+                    <ul class="list-inline">
+                        <li class="pull-left" id="logo"><p><span class="axle">AXLE</span><span class="interns"> Interns</span></p></li>
+                        <button type="button" class="btn btn-warning navbar-btn pull-right mynavbtn" data-toggle="modal" data-target="#signin">Sign In</button>
+                        <li class="pull-right navlinks"><a href="#">About</a></li> 
+                    </ul>
+                </div>
+            </div>
+        </div>
     <div class="navbar-fixed">
   <nav>
     <div class="nav-wrapper white">
@@ -44,21 +65,21 @@
 
 
     <div class="background-img">
-      <img src="https://i.ytimg.com/vi/QTZQ9bta31w/maxresdefault.jpg" />
     </div>
   </div>
 </div>
 
-<div class="">
-  <div id="profile-title" class="container negativeTopMargin">
-    <div class="row">
+<div class="pre-negative white">
+  <div id="profile-title" class="container">
+    <div class="row negativeTopMargin">
       <div class="col">
         <div class="valign-wrapper">
           <img id="profile-pic" src="https://scontent.xx.fbcdn.net/v/t1.0-1/p320x320/12038208_1157016594313579_7901493159971667180_n.jpg?oh=a3e31e742b5a89fafb210d51a23db18e&oe=580E4E77" width="200px" height="200px" alt="" class="circle">
+            <h4>
+           Rafael Calpena Rodrigues
+        </h4>      
 
-          <h4 >
-           {{users[0].name}}
-        </h4>
+
         </div>
       </div>
     </div>
@@ -108,7 +129,7 @@
   </div>
 </div>
 
-<footer class="page-footer green">
+<footer class="page-footer white">
   <div class="container">
     <div class="row">
       <div class="col l6 s12">
@@ -136,7 +157,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox-plus-jquery.js"></script>
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 
-        <script src="script/profile.js"></script>
+      <script src="script/profile.js"></script>
       <script src="script/app.js"></script>
       <script src="script/Controllers/mainController.js"></script>
     
