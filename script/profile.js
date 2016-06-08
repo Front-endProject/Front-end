@@ -1,3 +1,5 @@
+(function(){ 
+//create closure to avoid polluting the global namespace
 var initialOffset = $("#profile-title").offset().top; 
 var bgHeight;
 var bgWrapHeight = $(".bgWrap").height();
@@ -72,3 +74,5 @@ function calculateY(p1, p2, x){
   //console.log("a:" , y)
   return y;
 }
+
+})()
