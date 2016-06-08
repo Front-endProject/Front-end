@@ -1,29 +1,35 @@
-(function() {
-    //create closure to avoid polluting the global namespace
-    var initialOffset = $("#profile-title").offset().top;
+(function() { //create closure to avoid polluting the global namespace
+
+    var profileTitle = "#profile-title",
+        bgWrap = ".bgWrap",
+        navbarFixed = ".navbar-fixed",
+        bgImgImg = ".background-img img",
+        bgImg = ".background-img",
+        bgLayer = ".background-layer"; //these will change with each developers program
+
+
+    var initialOffset = $(profileTitle).offset().top;
     var bgHeight;
-    var bgWrapHeight = $(".bgWrap").height();
+    var bgWrapHeight = $().height();
 
-    var s = $(window).scrollTop();
-    var navbarHeight = $(".navbar-fixed").height();
-    var initialDiff = initialOffset - s - navbarHeight;
+    var scrollTop = $(window).scrollTop();
+    var navbarHeight = $(navbarFixed).height();
+    var initialDiff = initialOffset - scrollTop- navbarHeight;
 
-    $(".background-img img").load(function(e) {
-        //alert(this.height)
+    $(bgImgImg).load(function(e) {
         bgHeight = this.height;
     })
 
-    //console.log("initial diff is ", initialDiff);
     var finalDiff = 0;
     var imgInitialValue = 200;
     var imgFinalValue = 100;
     var finalPercentage = imgFinalValue / imgInitialValue;
 
-    var navbarHeight = $(".navbar-fixed").height();
+    var navbarHeight = $(navbarFixed).height();
 
     function updateScroll() {
-        var s = $(window).scrollTop();
-        var d = (initialOffset - s - navbarHeight);
+        var scrollTop= $(window).scrollTop();
+        var d = (initialOffset - scrollTop- navbarHeight);
 
         var imgPercentage = calculateY({
             x: initialDiff,
@@ -41,7 +47,7 @@
             y: 1
         }, d);
 
-        $("#profile-title").css('transform', 'scale(' + imgPercentage + ')');
+        $(profileTitle).css('transform', 'scale(' + imgPercentage + ')');
 
         var bgRGB = calculateY({
             x: initialDiff,
@@ -52,7 +58,7 @@
         }, d);
         bgRGB = parseInt(bgRGB, 10);
         var str = "rgba(" + bgRGB + "," + bgRGB + "," + bgRGB + "," + bgPercentage + ")";
-        $(".background-layer").css('background', str);
+        $(bgLayer).css('background', str);
 
         if(!bgHeight) return;
         var imgPosY = calculateY({
@@ -71,8 +77,7 @@
 
         var str2 = 'translate(0,' + imgPosY + 'px)';
 
-        //console.log(imgPosY)
-        $(".background-img").css('transform', str2);
+        $(bgImg).css('transform', str2);
 
 
 
@@ -98,6 +103,12 @@
         y = Math.min(Math.max(minY, y), maxY);
         //console.log("a:" , y)
         return y;
+    }
+
+    return {
+        parallax: function(){},
+        scale: function(){},
+        fade: function(){}
     }
 
 })()
