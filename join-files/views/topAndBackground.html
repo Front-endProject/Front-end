@@ -3,8 +3,8 @@
                <div class="container pnav">
                     <ul class="list-inline">
                         <li class="pull-left" id="logo"><p><span class="axle">AXLE</span><span class="interns"> Interns</span></p></li>
-                        <button type="button" class="btn btn-warning navbar-btn pull-right mynavbtn" data-toggle="modal" data-target="#signin">Sign In</button>
-                        <li class="pull-right navlinks"><a href="#">About</a></li> 
+                        <button ng-click="toggleStatus()" type="button" class="btn btn-warning navbar-btn pull-right mynavbtn" data-target="#signin">Sign <span> {{ isSignedIn ? 'Out' : 'In'}}</span> </button> <!--removed data-toggle for manual use-->
+                        <!--<li class="pull-right navlinks"><a href="#">About</a></li> -->
                     </ul>
                 </div>
             </nav>

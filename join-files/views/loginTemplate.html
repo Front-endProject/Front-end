@@ -1,8 +1,8 @@
-    <div class="container">
+    <div class="container" id="login-container">
         <div class="col-xs-12 col-sm-6" id="text">
             <h1>Welcome</h1>
             <p>This is a random page built by <del>professionals</del> interns and does absolutely nothing!!</p>
-            <p><a class="btn btn-warning btn-lg" href="profile.html" role="button">Go to test profile page</a></p>
+            <p><a class="btn btn-warning btn-lg" ng-click="signIn()" role="button">Go to test profile page</a></p>
         </div>
             
             
@@ -81,7 +81,7 @@
 
                                     </div>
                                     <div class="col-sm-offset-2">
-                                        <input class="btn btn-success" type="submit" value="Sign in">
+                                        <input class="btn btn-success" type="submit" value="Sign in" ng-click="signIn()">
                                     </div>
                                 </form>
                             </div>

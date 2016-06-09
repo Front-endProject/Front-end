@@ -168,3 +168,15 @@ h5 { font-size:2.4rem; color: #4CAF50;}
 .container.pnav {
   padding: 0;
 }
+
+#login-container {
+  color:white;
+}
+
+#login-container h1 {
+    font-size:5rem;
+}
+
+#login-container p {
+  font-size:2rem;
+}

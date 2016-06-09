@@ -2,9 +2,38 @@ angular.module('includeExample', [])
 .controller('ExampleController', ['$scope', function($scope) {
   $scope.templates =
     [ 
-      { name: 'template2.html', url: 'views/new-profile.html'},
-      { name: 'template1.html', url: 'views/loginTemplate.html'}, ];
+      { name: 'template1.html', url: 'views/loginTemplate.html'},
+      { name: 'template2.html', url: 'views/new-profile.html'}
+    ];
   $scope.template = $scope.templates[0];
+
+  $scope.signIn = function(){
+  	$scope.template = $scope.templates[1];
+
+  	//remove modal
+    $('#signin').modal('hide');  		
+
+  	$scope.isSignedIn = true;
+  }
+
+  $scope.signOut = function(){
+  	$scope.template = $scope.templates[0];
+
+  	//remove modal
+    $('#signin').modal('hide');  		
+  	$scope.isSignedIn = false;  	
+  }
+
+  $scope.toggleStatus = function(){
+  	if($scope.isSignedIn){
+  		$scope.signOut();
+  		return false;
+  	} else {
+		$('#signin').modal('show');  		
+  	}
+  }
+
+  $scope.isSignedIn = false;
 }])
 
 
@@ -23,7 +52,7 @@ angular.module('includeExample', [])
 	        bgImg = ".background-img",
 	        bgLayer = ".background-layer"; 
 
-	        if($(profileTitle).offset()) alert("initializing")
+	        //if($(profileTitle).offset()) alert("initializing")
 	    //var initialOffset = $(profileTitle).offset().top; //used as a first value to create the function
 		//WORKAROUND
 		//var initialOffset = $(profileTitle).offset().top + $(".pre-negative").offset().top;

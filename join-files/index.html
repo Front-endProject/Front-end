@@ -53,14 +53,14 @@
     </head>
 
 
-    <body ng-app="includeExample">
+    <body ng-app="includeExample" ng-controller="ExampleController">
 
         <div ng-include="'views/topAndBackground.html'"></div>
-        <div  ng-controller="ExampleController">
+        <!--<div 
          <div style="position:fixed; bottom:0; left:0; right:0; height:40px; background: orange"><select ng-model="template" ng-options="t.name for t in templates">
                 <option value="">(blank)</option>
             </select> url of the template: <code>{{template.url}}</code>
-            </div>
+        </div>-->
         
         <div id="page-holder">
 
@@ -87,6 +87,12 @@
             <script src="script/script.js"></script>
 
             <!--end of login-->
+
+            <!-- disable bootstrap modal and make it trigger manually-->
+            <script>
+            $('#signin').modal({ show: false})
+            </script>
+
 
     </body>
 
