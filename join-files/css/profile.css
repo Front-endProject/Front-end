@@ -63,7 +63,7 @@ html, body { height:100%}
 }
 .img-showcase {
   height:250px;
-background-image: url("http://placekitten.com/500/300");
+/*background-image: url("http://placekitten.com/500/300");*/
 background-repeat:no-repeat;
 background-position: center center;}
 
@@ -179,4 +179,18 @@ h5 { font-size:2.4rem; color: #4CAF50;}
 
 #login-container p {
   font-size:2rem;
+}
+
+.editbutton {
+  visibility: visible
+}
+
+h4:hover .editbutton, h5:hover .editbutton, .editable:hover .editbutton  {
+  visibility: visible;
+}
+
+.edittitle {
+  width:600px;
+  position: absolute;
+  bottom: 40px;
 }

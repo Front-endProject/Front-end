@@ -1,6 +1,6 @@
 
 
-<div class="pre-negative white" ng-style="{'margin-top':'400px'}">
+<div class="pre-negative white" ng-style="{'margin-top':'400px'}" ng-controller="EditController">
   <div id="profile-title" class="container">
     <div class="row negativeTopMargin">
       <div class="col">
@@ -9,9 +9,14 @@
             <img id="profile-pic" src="https://scontent.xx.fbcdn.net/v/t1.0-1/p320x320/12038208_1157016594313579_7901493159971667180_n.jpg?oh=a3e31e742b5a89fafb210d51a23db18e&oe=580E4E77" width="200px" height="200px" alt="" class="circle" scroll>
           </div>
 
-          <h4 ng-style="{'position': 'absolute','bottom': '40px'}">
-           Rafael Calpena Rodrigues
+          <h4  ng-style="{'position': 'absolute','bottom': '40px'}">
+           <span ng-show="fields.name.isEditing == false"> {{fields.name.value}} </span>
+                                        <span ng-show="fields.name.isEditing == true">
+                                            <input class="form-control edittitle" ng-model="fields.name.value" type="text">
+                                        </span>
+           <button ng-click="toggleEditMode('name')" type="button" class="btn btn-warning navbar-btn pull-right mynavbtn editbutton"> <span> {{ fields.name.isEditing == false ? 'Edit' : 'Save'}}</span> </button> 
         </h4>      
+                        <!--removed data-toggle for manual use-->
 
         </div>
       </div>
@@ -23,29 +28,32 @@
       <div class="row valign-wrapper">
         <div class="col s12 white">
           <div class="container topMargin">
-            <h5 class="green-text"> About me </h5>
-            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla congue aliquet velit, vel volutpat libero dignissim in. Morbi eu volutpat metus. Suspendisse arcu lectus, ullamcorper eget elit nec, semper feugiat nisl. Suspendisse tempor metus a scelerisque ullamcorper. Vestibulum feugiat nibh in mauris mollis viverra ultrices convallis nibh. Vestibulum at blandit eros, eget efficitur eros. Cras ultrices justo eros, non vulputate enim blandit vel. Aliquam aliquet arcu porta, iaculis massa ac, commodo magna. Proin ullamcorper feugiat risus, ac tincidunt nulla iaculis in. Fusce sed feugiat quam. Mauris imperdiet ornare diam, non gravida nisl.
+            <h5 class="green-text"> About me 
+           <button ng-click="toggleEditMode('about')" type="button" class="btn btn-warning navbar-btn editbutton"> <span> {{ fields.about.isEditing == false ? 'Edit' : 'Save'}}</span> </button> 
+            </h5>
+            <span id="about-text" contenteditable="false"> {{fields.about.value}} </span>
+            <h5 class="green-text bigTopMargin">Pictures
+           <button type="button" class="btn btn-warning navbar-btn editbutton"> <span> Add Picture</span> </button> 
+            </h5>
+            <div class="row showcase" ng-repeat="item in fields.pictures">
 
-Proin sollicitudin elit et consectetur pellentesque. Praesent ligula ligula, pretium quis sodales eget, pulvinar sit amet augue. Praesent lobortis, enim non feugiat lobortis, lectus lectus molestie sapien, in cursus ex mauris a tortor. Nullam blandit, odio ac iaculis dictum, dolor sem aliquet tortor, eget aliquam tortor urna non lorem. Cras tempor eleifend nunc non eleifend. Suspendisse auctor diam a metus varius, eu consequat odio aliquam. Nulla suscipit dictum dictum. Donec tortor ligula, accumsan vitae ex quis, finibus lobortis erat. Curabitur sapien orci, ornare quis varius eu, bibendum at risus. Etiam ac eros eros. Mauris semper luctus eros. Maecenas varius ligula eget arcu ultrices, id ullamcorper sem dignissim. Nulla sed quam varius, vestibulum odio ac, condimentum lorem. Curabitur sem eros, elementum id placerat suscipit, varius vitae ipsum.
-
-Phasellus id lorem est. Morbi quis est finibus, aliquam nulla eu, facilisis lorem. Duis sit amet enim dui. Donec condimentum lectus nec nisl commodo tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor tempus eros quis fringilla. Duis eu nisl mattis, lacinia ipsum eu, consequat tellus. Aliquam et purus quis erat faucibus pulvinar nec ut odio. Suspendisse dignissim orci sed placerat vulputate. Vivamus in mauris bibendum odio aliquam placerat eget tincidunt nulla.</span>
-            <h5 class="green-text bigTopMargin">Pictures</h5>
-            <div class="row showcase">
-
-              <div class="col l6 pre-img">
-                <div class="img-showcase"></div>
-              </div>             
-              <div class="col l6 pre-img">
-                <div class="img-showcase"></div>
-              </div>              
+              <div class="col l6 pre-img" >
+                <div class="img-showcase" ng-style="{'background-image':'url('+item.url+')'}"></div>
+              </div>                        
             </div>
 
-            <h5 class="green-text bigTopMargin">Contact</h5>
+            <h5 class="green-text bigTopMargin">Contact
+           <button type="button" class="btn btn-warning navbar-btn editbutton"> <span ng-click="addContact()"> Add Contact</span> </button> 
+            </h5>
             <div class="row">
-              <div class="col l12">
-              <span class="bold">Email:</span><span> someemailhere@somedomain.com</span><br/>
-              <span class="bold">Office:</span><span> 123</span><br/>               <span class="bold">Facebook:</span><span> <a href="http://facebook.com">Rafael Calpena Rodrigues</a></span><br/>               
+              <div class="col l12" ng-repeat="item in fields.contact">
+              <div class="editable contactWrapper">
+              <span class="bold" contenteditable="false">{{item.title}}:</span><span contenteditable="false"> {{item.value}}</span>           
+              <button ng-click="toggleEditMode('contact', $index)" type="button" class="btn btn-warning navbar-btn editbutton"> <span> {{ fields.contact[$index].isEditing == false ? 'Edit' : 'Save'}}</span> </button>
+              <button ng-click="removeContact($index)" type="button" class="btn btn-warning navbar-btn editbutton"> <span> Remove </span> </button>
+               <br/>            
               </div>
+            </div>
             </div>
 
             </div>
