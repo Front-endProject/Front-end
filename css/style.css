@@ -1,27 +1,31 @@
 
-html,body {
-    height:100%;
-}
-.navbar {
-    margin-bottom: 0px;
-}
-.jumbotron { 
+body{
     
-    height: 100%;
+    height:100%;
+    width: 100%;
     margin-bottom: 0px;
     background-attachment: fixed;
    
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,7db9e8+100&1+0,0+100 */
-    background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(125,185,232,0) 100%) , url("../city.jpg"); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(125,185,232,0) 100%), url("../city.jpg"); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(125,185,232,0) 100%), url("../city.jpg"); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background-image: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(125,185,232,0) 100%) , url("../city.jpg"); /* FF3.6-15 */
+    background-image: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(125,185,232,0) 100%), url("../city.jpg"); /* Chrome10-25,Safari5.1-6 */
+    background-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(125,185,232,0) 100%), url("../city.jpg"); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#007db9e8',GradientType=0 ); /* IE6-9 */
-    background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    -webkit-background-size: 100% 100%;
-    -o-background-size: 100% 100%;
-    color: white;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    
 }
+#mainContainer{
+    padding-bottom: 15px;
+    color:white;
+}
+
+.navbar {
+    margin-bottom: 0px;
+}
+
 
 .axle{
     color: #4CAF50;

@@ -1,15 +1,27 @@
 <!DOCTYPE html>
-<html >
+<html ng-app="profile">
   <head>
     <meta charset="UTF-8">
+      
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
     <title>A Pen by  Rafael</title>
     <!-- Compiled and minified CSS -->
 
+
 <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.css" rel="stylesheet">-->
 
+      
+  <!--angular CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+
+  <link rel="stylesheet" href="css/profile.css">
+      
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
 
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
@@ -63,10 +75,10 @@
       <div class="col">
         <div class="valign-wrapper">
           <img id="profile-pic" src="https://scontent.xx.fbcdn.net/v/t1.0-1/p320x320/12038208_1157016594313579_7901493159971667180_n.jpg?oh=a3e31e742b5a89fafb210d51a23db18e&oe=580E4E77" width="200px" height="200px" alt="" class="circle">
-
-          <h4>
+            <h4>
            Rafael Calpena Rodrigues
         </h4>      
+
 
         </div>
       </div>
@@ -79,11 +91,13 @@
         <div class="col s12 white">
           <div class="container topMargin">
             <h5 class="green-text"> About me </h5>
-            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla congue aliquet velit, vel volutpat libero dignissim in. Morbi eu volutpat metus. Suspendisse arcu lectus, ullamcorper eget elit nec, semper feugiat nisl. Suspendisse tempor metus a scelerisque ullamcorper. Vestibulum feugiat nibh in mauris mollis viverra ultrices convallis nibh. Vestibulum at blandit eros, eget efficitur eros. Cras ultrices justo eros, non vulputate enim blandit vel. Aliquam aliquet arcu porta, iaculis massa ac, commodo magna. Proin ullamcorper feugiat risus, ac tincidunt nulla iaculis in. Fusce sed feugiat quam. Mauris imperdiet ornare diam, non gravida nisl.
-
-Proin sollicitudin elit et consectetur pellentesque. Praesent ligula ligula, pretium quis sodales eget, pulvinar sit amet augue. Praesent lobortis, enim non feugiat lobortis, lectus lectus molestie sapien, in cursus ex mauris a tortor. Nullam blandit, odio ac iaculis dictum, dolor sem aliquet tortor, eget aliquam tortor urna non lorem. Cras tempor eleifend nunc non eleifend. Suspendisse auctor diam a metus varius, eu consequat odio aliquam. Nulla suscipit dictum dictum. Donec tortor ligula, accumsan vitae ex quis, finibus lobortis erat. Curabitur sapien orci, ornare quis varius eu, bibendum at risus. Etiam ac eros eros. Mauris semper luctus eros. Maecenas varius ligula eget arcu ultrices, id ullamcorper sem dignissim. Nulla sed quam varius, vestibulum odio ac, condimentum lorem. Curabitur sem eros, elementum id placerat suscipit, varius vitae ipsum.
-
-Phasellus id lorem est. Morbi quis est finibus, aliquam nulla eu, facilisis lorem. Duis sit amet enim dui. Donec condimentum lectus nec nisl commodo tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor tempus eros quis fringilla. Duis eu nisl mattis, lacinia ipsum eu, consequat tellus. Aliquam et purus quis erat faucibus pulvinar nec ut odio. Suspendisse dignissim orci sed placerat vulputate. Vivamus in mauris bibendum odio aliquam placerat eget tincidunt nulla.</span>
+            <span>
+                
+              {{users[0].description}}
+              
+              
+              
+            </span>
             <h5 class="green-text bigTopMargin">Pictures</h5>
             <div class="row showcase">
 
@@ -104,7 +118,7 @@ Phasellus id lorem est. Morbi quis est finibus, aliquam nulla eu, facilisis lore
             <h5 class="green-text bigTopMargin">Contact</h5>
             <div class="row">
               <div class="col l12">
-              <span class="bold">Email:</span><span> someemailhere@somedomain.com</span><br/>
+              <span class="bold">Email:</span><span> {{users[0].email}}</span><br/>
               <span class="bold">Office:</span><span> 123</span><br/>               <span class="bold">Facebook:</span><span> <a href="http://facebook.com">Rafael Calpena Rodrigues</a></span><br/>               
               </div>
             </div>
@@ -143,9 +157,9 @@ Phasellus id lorem est. Morbi quis est finibus, aliquam nulla eu, facilisis lore
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox-plus-jquery.js"></script>
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 
-        <script src="script/profile.js"></script>
-
-    
+      <script src="script/profile.js"></script>
+      <script src="script/app.js"></script>
+      <script src="script/Controllers/mainController.js"></script>
     
   </body>
 </html>
