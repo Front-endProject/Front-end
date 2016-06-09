@@ -41,11 +41,11 @@ angular.module('includeExample', [])
 		name: {value:"Rafael Calpena Rodrigues", isEditing:false},
 		about: {value:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla congue aliquet velit, vel volutpat libero dignissim in. Morbi eu volutpat metus. Suspendisse arcu lectus, ullamcorper eget elit nec, semper feugiat nisl. Suspendisse tempor metus a scelerisque ullamcorper. Vestibulum feugiat nibh in mauris mollis viverra ultrices convallis nibh. Vestibulum at blandit eros, eget efficitur eros. Cras ultrices justo eros, non vulputate enim blandit vel. Aliquam aliquet arcu porta, iaculis massa ac, commodo magna. Proin ullamcorper feugiat risus, ac tincidunt nulla iaculis in. Fusce sed feugiat quam. Mauris imperdiet ornare diam, non gravida nisl. Proin sollicitudin elit et consectetur pellentesque. Praesent ligula ligula, pretium quis sodales eget, pulvinar sit amet augue. Praesent lobortis, enim non feugiat lobortis, lectus lectus molestie sapien, in cursus ex mauris a tortor. Nullam blandit, odio ac iaculis dictum, dolor sem aliquet tortor, eget aliquam tortor urna non lorem. Cras tempor eleifend nunc non eleifend. Suspendisse auctor diam a metus varius, eu consequat odio aliquam. Nulla suscipit dictum dictum. Donec tortor ligula, accumsan vitae ex quis, finibus lobortis erat. Curabitur sapien orci, ornare quis varius eu, bibendum at risus. Etiam ac eros eros. Mauris semper luctus eros. Maecenas varius ligula eget arcu ultrices, id ullamcorper sem dignissim. Nulla sed quam varius, vestibulum odio ac, condimentum lorem. Curabitur sem eros, elementum id placerat suscipit, varius vitae ipsum.Phasellus id lorem est. Morbi quis est finibus, aliquam nulla eu, facilisis lorem. Duis sit amet enim dui. Donec condimentum lectus nec nisl commodo tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor tempus eros quis fringilla. Duis eu nisl mattis, lacinia ipsum eu, consequat tellus. Aliquam et purus quis erat faucibus pulvinar nec ut odio. Suspendisse dignissim orci sed placerat vulputate. Vivamus in mauris bibendum odio aliquam placerat eget tincidunt nulla.", isEditing:false},
 		pictures: [{url:"http://placekitten.com/500/300"}],
-		contact: [{title:"Email", value:"someemailhere", isEditing:false}, {title:"Email", value:"someemailhere", isEditing:false}]
+		contact: [{title:"Email", value:"abc.def@ghi.com", isEditing:false}, {title:"Telephone", value:"555-555-5555", isEditing:false}]
 	};
 	$scope.toggleEditMode= function(item, subitem){
-		if (!subitem) $scope.fields[item].isEditing = !$scope.fields[item].isEditing;
-		else $scope.fields[item].isEditing = !$scope.fields[item].isEditing;
+		if ( typeof subitem === "undefined") $scope.fields[item].isEditing = !$scope.fields[item].isEditing;
+		else $scope.fields[item][subitem].isEditing = !$scope.fields[item][subitem].isEditing;
 
 
 		if(item === "about" && $scope.fields[item].isEditing){
@@ -56,10 +56,11 @@ angular.module('includeExample', [])
 		}
 		$scope.fields.about.value = $("#about-text").text();
 
+
 		if(item === "contact" && $scope.fields[item][subitem].isEditing){
-			$($("contactWrapper")[subitem]).attr('contentEditable','true')
+			$($($(".contactWrapper")[subitem]).children("span")[1]).attr('contentEditable','true')
 		}else {
-			$($("contactWrapper")[subitem]).attr('contentEditable','false')
+			$($($(".contactWrapper")[subitem]).children("span")[1]).attr('contentEditable','false')
 
 		}
 	//direct function to contentEditable
@@ -70,10 +71,27 @@ angular.module('includeExample', [])
 	}
 
 	$scope.removeContact = function(index){
-		alert(index);
-		$scope.fields.contact.splice(index,1);
+		//alert(index);
+		//$scope.fields.contact.splice(index,1);
+		$scope.fields.contact[index].value = ""; 
 	}
 
+	$scope.getLabel = function(value){
+		if (value === "") return "Add"
+			return "Edit"
+	}
+
+	$scope.removePicture = function(index){
+		 $scope.fields.pictures.splice(index,1);
+	}
+
+
+	$scope.isAddingPic = false;
+	$scope.newPicUrl = "";
+	$scope.addPicture = function(url){
+		 $scope.fields.pictures.push({url: url})
+		 $scope.isAddingPicture = false;
+	}
 
 }])
 

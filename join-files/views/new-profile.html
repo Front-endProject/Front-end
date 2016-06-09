@@ -33,23 +33,39 @@
             </h5>
             <span id="about-text" contenteditable="false"> {{fields.about.value}} </span>
             <h5 class="green-text bigTopMargin">Pictures
-           <button type="button" class="btn btn-warning navbar-btn editbutton"> <span> Add Picture</span> </button> 
+           <button type="button" class="btn btn-warning navbar-btn editbutton" ng-click="isAddingPicture = true"> <span> Add Picture</span> </button> 
+              <span ng-show="isAddingPicture == true">
+                  <input class="form-control" ng-model="newPicUrl" type="text" placeholder="Picture URL">
+                  <button type="button" class="btn btn-warning navbar-btn editbutton" ng-click="addPicture(newPicUrl)" >
+                    <span>Save</span>
+                  </button>    
+                  <button type="button" class="btn btn-warning navbar-btn editbutton" ng-click="isAddingPicture = false">
+                    <span>Cancel</span>
+                  </button>
+              </span> 
             </h5>
             <div class="row showcase" ng-repeat="item in fields.pictures">
 
               <div class="col l6 pre-img" >
-                <div class="img-showcase" ng-style="{'background-image':'url('+item.url+')'}"></div>
+                <div class="img-showcase" ng-style="{'background-image':'url('+item.url+')'}">
+              <button ng-click="removePicture($index)" type="button" class="btn btn-warning pull-right navbar-btn editbutton"> <span> Remove </span> 
+              </button>
+                </div>
               </div>                        
             </div>
 
             <h5 class="green-text bigTopMargin">Contact
-           <button type="button" class="btn btn-warning navbar-btn editbutton"> <span ng-click="addContact()"> Add Contact</span> </button> 
+           <!--<button type="button" class="btn btn-warning navbar-btn editbutton"> <span ng-click="addContact()"> Add Contact</span> </button> -->
             </h5>
             <div class="row">
               <div class="col l12" ng-repeat="item in fields.contact">
               <div class="editable contactWrapper">
-              <span class="bold" contenteditable="false">{{item.title}}:</span><span contenteditable="false"> {{item.value}}</span>           
-              <button ng-click="toggleEditMode('contact', $index)" type="button" class="btn btn-warning navbar-btn editbutton"> <span> {{ fields.contact[$index].isEditing == false ? 'Edit' : 'Save'}}</span> </button>
+              <span class="bold typeofcontact" contenteditable="false">{{item.title}}:</span>
+              <span ng-show="fields.contact[$index].isEditing == false"> {{fields.contact[$index].value}} </span>
+              <span ng-show="fields.contact[$index].isEditing == true">
+                  <input class="form-control" ng-model="fields.contact[$index].value" type="text">
+              </span>         
+              <button ng-click="toggleEditMode('contact', $index)" type="button" class="btn btn-warning navbar-btn editbutton"> <span> {{ fields.contact[$index].isEditing == false ? getLabel(fields.contact[$index].value) : 'Save'}}</span> </button>
               <button ng-click="removeContact($index)" type="button" class="btn btn-warning navbar-btn editbutton"> <span> Remove </span> </button>
                <br/>            
               </div>
@@ -65,7 +81,7 @@
   </div>
 </div>
 
-<footer class="page-footer white">
+<!--<footer class="page-footer white">
   <div class="container">
     <div class="row">
       <div class="col l6 s12">
@@ -89,6 +105,6 @@
       <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
     </div>
   </div>
-</footer>
+</footer>-->
 
 
