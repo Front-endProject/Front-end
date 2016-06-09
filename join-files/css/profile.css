@@ -1,0 +1,170 @@
+* {
+  margin:0;padding:0;
+}
+
+.brand-logo {
+  margin: 0 1rem
+}
+.bold {font-weight:bold}
+.background-intro {
+  width: 100%;
+  /*max-height: 300px;*/
+  overflow:hidden;
+  background: green;
+  position:relative;
+  z-index:-100;
+}
+
+.background-layer {
+  position: absolute;
+  top:0; left:0; right:0; bottom: 0;
+  background: rgba(255,255,255,.0);
+  z-index:1;  
+
+}
+html, body { height:100%}
+.bgWrap {
+  height: 50%;
+}
+.background-intro {
+  position:fixed;
+  top: 0;
+  height: 100%;
+  z-index:-1;
+}
+
+.topMargin {
+  margin-top:1.5rem;
+}
+
+.bigTopMargin {
+  margin-top:4rem;
+}
+
+.negativeTopMargin {
+  transform: translateY(-55px);
+}
+
+.background-img img {
+  width:100%;
+  transform: translateY(-100px);
+}
+
+#profile-pic {
+    transform-origin:0 100%;
+    position:absolute;
+  /*z-index:20;*/
+}
+
+
+.pre-img {
+    padding:10px;
+    margin-bottom:20px;
+}
+.img-showcase {
+  height:250px;
+background-image: url("http://placekitten.com/500/300");
+background-repeat:no-repeat;
+background-position: center center;}
+
+.axle{
+    color: #4CAF50;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 35px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 20px;
+   
+}
+
+.interns{
+font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 20px;
+    color: #F39C12;
+    
+}
+
+#topnav {
+  position: fixed;
+  left:0;
+  right:0;
+  z-index:2;
+
+  /* specific to jumbotron */
+  padding-top: 48px;
+
+padding-bottom: 48px;
+}
+
+#nav-mod {
+    background-color:transparent;
+}
+
+.circle {
+  border-radius:50%;
+}
+
+.background-img {
+      height: 100%;
+    margin-bottom: 0px;
+    background-attachment: fixed;
+   
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,7db9e8+100&1+0,0+100 */
+    background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(125,185,232,0) 100%) , url("../city.jpg"); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(125,185,232,0) 100%), url("../city.jpg"); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(125,185,232,0) 100%), url("../city.jpg"); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#007db9e8',GradientType=0 ); /* IE6-9 */
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    color: white;
+
+}
+
+.row {
+  margin:0 !important;
+}
+
+
+.white {
+  background: #fff;
+}
+
+h4 { font-size: 3.6rem; display:inline; margin-left:3.6rem;}
+
+h5 { font-size:2.4rem; color: #4CAF50;}
+
+.pre-negative {
+  padding-bottom: 5rem;
+}
+
+.page-footer { background: #4CAF50; color:#fff; padding:2rem 0;}
+
+.page-holder { height:100%;}
+
+.big-margin {};
+
+.blackBg {
+  background-color: #000;
+}
+
+.topbar {
+  height:55px;
+  transition: .5s all linear;
+  z-index:20;
+}
+
+.container.topMargin {
+  padding-left: calc(215px + 3.6rem);
+
+}
+
+.container.pnav {
+  padding: 0;
+}

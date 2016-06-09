@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+
+    <head>
+
+        <meta charset="utf-8">
+
+        <title>Axle internship</title>
+
+
+        <!-- Latest compiled and minified CSS -->
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+        <!--my personal css -->
+
+
+        <!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <!-- angular js -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular-animate.js"></script>-->
+        <!--OUR FILES FOR ANGULAR CONTROLLERS, ETC -->
+        <script src="controllers/templateController.js"></script>
+
+
+
+        <!-- these are for the profile page -->
+        <!--scripts-->
+        <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+
+        <script src="script/profile.js"></script>
+        <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.css" rel="stylesheet">-->
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="css/profile.css">
+        <!-- end profile page -->
+
+        <!-- css for login page -->
+        <link rel="stylesheet" href="css/style.css">        
+    </head>
+
+
+    <body ng-app="includeExample">
+
+        <div ng-include="'views/topAndBackground.html'"></div>
+        <div  ng-controller="ExampleController">
+         <div style="position:fixed; bottom:0; left:0; right:0; height:40px; background: orange"><select ng-model="template" ng-options="t.name for t in templates">
+                <option value="">(blank)</option>
+            </select> url of the template: <code>{{template.url}}</code>
+            </div>
+        
+        <div id="page-holder">
+
+
+
+            <div class="">
+                <div ng-include="template.url"></div>
+            </div>
+
+
+
+
+        </div>
+        </div>
+            <!--these are all for login -->
+
+            <!-- jQuery -->
+            <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+            <!-- my personal script -->
+            <script src="script/script.js"></script>
+
+            <!--end of login-->
+
+    </body>
+
+</html>
