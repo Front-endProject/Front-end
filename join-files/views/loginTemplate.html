@@ -2,7 +2,7 @@
         <div class="col-xs-12 col-sm-6" id="text">
             <h1>Welcome</h1>
             <p>This is a random page built by <del>professionals</del> interns and does absolutely nothing!!</p>
-            <p><a class="btn btn-warning btn-lg" ng-click="signIn()" role="button">Go to test profile page</a></p>
+            <!--<p><a class="btn btn-warning btn-lg" ng-click="signIn()" role="button">Go to test profile page</a></p>-->
         </div>
             
             
@@ -62,26 +62,26 @@
                             </div>
                         <!-- Modal Body -->
                             <div class="modal-body">
-                                <form class="form-horizontal" role="form">
+                                <form class="form-horizontal" name='myForm' role="form">
                 
                                     <div class="form-group has-feedback has-feedback-left">
-                                        <label class = "control-label col-sm-2" for="iUsername">Username</label>
+                                        <label class = "control-label col-sm-2" for="iUsername" required>Username</label>
                                         <div class="col-sm-10">
-                                            <input class="form-control" type="text" id="iUsername" placeholder="Enter your Username">
+                                            <input ng-model="inputValues.username" name="username" class="form-control" type="text" id="iUsername" placeholder="Enter your Username">
                                             <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
                                         </div>
 
                                     </div>
                                     <div class="form-group has-feedback has-feedback-left">
-                                         <label class = "control-label col-sm-2" for="iPassword">Password</label>
+                                         <label class = "control-label col-sm-2" for="iPassword" required>Password</label>
                                         <div class="col-sm-10">
-                                            <input class="form-control" type="password" id="iPassword" placeholder="Enter your password">
+                                            <input ng-model="inputValues.password" name="password" class="form-control" type="password" id="iPassword" placeholder="Enter your password">
                                             <span class="glyphicon glyphicon-lock form-control-feedback" aria-hidden="true"></span>
                                         </div>
 
                                     </div>
                                     <div class="col-sm-offset-2">
-                                        <input class="btn btn-success" type="submit" value="Sign in" ng-click="signIn()">
+                                        <input class="btn btn-success" ng-disabled=" (inputValues.username == '') || (inputValues.password == '') " type="submit" value="Sign in" ng-click="signIn()">
                                     </div>
                                 </form>
                             </div>
