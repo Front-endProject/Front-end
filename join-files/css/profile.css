@@ -194,3 +194,9 @@ h4:hover .editbutton, h5:hover .editbutton, .editable:hover .editbutton  {
   position: absolute;
   bottom: 40px;
 }
+
+@media only screen and (max-width: 600px) {
+    body {
+        .container.topMargin: {padding-left:0 !important};
+    }
+}
